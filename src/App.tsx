@@ -21,7 +21,7 @@ try {
   initialCart = [];
 }
 
-export default function App() {
+const App: React.FC = () => {
   const [cart, dispatch] = useReducer(cartReducer, initialCart);
   
   useEffect(() => localStorage.setItem("cart", JSON.stringify(cart)), [cart]);
@@ -53,3 +53,5 @@ export default function App() {
     </>
   );
 }
+
+export default App;

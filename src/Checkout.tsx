@@ -27,12 +27,11 @@ export default function Checkout({cart, dispatch}: Props) {
     const [saveError, setSaveError] = useState(null);
     const [touched, setTouched] = useState<any>({});
   
-    // Derived state
     const errors = getErrors(address);
     const isValid = Object.keys(errors).length === 0;
   
     function handleChange(e: any) {
-      e.persist(); // persist the event
+      e.persist();
       setAddress((curAddress) => {
         return {
           ...curAddress,
@@ -138,4 +137,3 @@ export default function Checkout({cart, dispatch}: Props) {
       </>
     );
   }
-  
