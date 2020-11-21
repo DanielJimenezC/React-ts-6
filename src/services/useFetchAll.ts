@@ -1,9 +1,10 @@
 import { equal } from "assert";
 import { useState, useRef, useEffect } from "react";
+import { Product } from "../models/product";
 
 export default function useFetchAll(urls: any) { 
     const prevUrls = useRef([]);
-    const [data, setData] = useState<any>([]);
+    const [data, setData] = useState<Array<Product>>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<any>(null);
 

@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from "react";
+import { Product } from "../models/product";
 
 const baseUrl = process.env.REACT_APP_API_BASE_URL;
 
-export default function useFecth(url: any) {
+export default function useFecth(url: string) {
     const isMounted = useRef(false);
     const [data, setData] = useState<any>([]);
     const [error, setError] = useState<any>(null);

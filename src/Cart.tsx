@@ -2,13 +2,14 @@ import React from "react";
 import useFetchAll from "./services/useFetchAll";
 import Spinner from "./Spinner";
 import { useNavigate } from "react-router-dom";
+import { CartItem } from "./models/cart";
 
 export default function Cart({cart, dispatch} : { cart: any , dispatch: any }) {
     const navigate = useNavigate();
-    const urls = cart.map((i: any) => `products/${i.id}`);
+    const urls = cart.map((i: CartItem) => `products/${i.id}`);
     const { data: products, loading, error } = useFetchAll(urls);
   
-    function renderItem(itemInCart: any) {
+    function renderItem(itemInCart: CartItem) {
       const { id, sku, quantity } = itemInCart;
       const { price, name, image, skus } = products.find(
         (p: any) => p.id === parseInt(id)
