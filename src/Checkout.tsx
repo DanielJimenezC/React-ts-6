@@ -1,5 +1,7 @@
 import { stringify } from "querystring";
 import React, { useState } from "react";
+import { ActionTypes } from "./models/actionTypes";
+import { CartItem } from "./models/cart";
 import { saveShippingAddress } from "./services/shippingService";
 
 const STATUS = {
@@ -14,7 +16,12 @@ const emptyAddress = {
     country: "",
 };
 
-export default function Checkout({cart, dispatch} : { cart: any, dispatch: any }) {
+type Props = {
+  cart: CartItem[]
+  dispatch: React.Dispatch<ActionTypes>
+}
+
+export default function Checkout({cart, dispatch}: Props) {
     const [address, setAddress] = useState(emptyAddress);
     const [status, setStatus] = useState(STATUS.IDLE);
     const [saveError, setSaveError] = useState(null);

@@ -74,6 +74,16 @@
       "city": "Lima",
       "country": "USA",
       "id": 3
+    },
+    {
+      "city": "Lima",
+      "country": "India",
+      "id": 4
+    },
+    {
+      "city": "Londres",
+      "country": "United Kingdom",
+      "id": 5
     }
   ]
 }

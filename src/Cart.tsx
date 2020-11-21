@@ -3,8 +3,14 @@ import useFetchAll from "./services/useFetchAll";
 import Spinner from "./Spinner";
 import { useNavigate } from "react-router-dom";
 import { CartItem } from "./models/cart";
+import { ActionTypes } from "./models/actionTypes";
 
-export default function Cart({cart, dispatch} : { cart: any , dispatch: any }) {
+type Props = {
+  cart: CartItem[]
+  dispatch: React.Dispatch<ActionTypes>
+}
+
+export default function Cart({cart, dispatch}: Props) {
     const navigate = useNavigate();
     const urls = cart.map((i: CartItem) => `products/${i.id}`);
     const { data: products, loading, error } = useFetchAll(urls);
