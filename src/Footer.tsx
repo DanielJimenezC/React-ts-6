@@ -1,7 +1,6 @@
 import React from "react";
 
-export default function Footer() {
-  return (
+const Footer: React.FC = () =>
     <footer>
       <p>
         This site is created for demonstrative purposes only and does not offer
@@ -9,5 +8,5 @@ export default function Footer() {
       </p>
       <p>&copy; Pluralsight 2020</p>
     </footer>
-  );
-}
+
+export default Footer;

@@ -14,7 +14,7 @@ const emptyAddress = {
     country: "",
 };
 
-export default function Checkout({cart, dispatch} : { cart: any, dispatch: any }) {
+const Checkout: React.FC<{ cart: any, dispatch: any }> = ({cart, dispatch} : { cart: any, dispatch: any }) => {
     const [address, setAddress] = useState(emptyAddress);
     const [status, setStatus] = useState(STATUS.IDLE);
     const [saveError, setSaveError] = useState(null);
@@ -132,3 +132,4 @@ export default function Checkout({cart, dispatch} : { cart: any, dispatch: any }
     );
   }
   
+export default Checkout;

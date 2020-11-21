@@ -3,7 +3,7 @@ import useFetchAll from "./services/useFetchAll";
 import Spinner from "./Spinner";
 import { useNavigate } from "react-router-dom";
 
-export default function Cart({cart, dispatch} : { cart: any , dispatch: any }) {
+const Cart: React.FC<{ cart: any , dispatch: any }> = ({cart, dispatch} : { cart: any , dispatch: any }) => {
     const navigate = useNavigate();
     const urls = cart.map((i: any) => `products/${i.id}`);
     const { data: products, loading, error } = useFetchAll(urls);
@@ -71,3 +71,5 @@ export default function Cart({cart, dispatch} : { cart: any , dispatch: any }) {
       </section>
     );
   }
+
+export default Cart;
